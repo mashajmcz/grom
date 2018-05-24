@@ -3,12 +3,12 @@ package lesson9;
 public class User {
         private long id;
         private String name;
-        private String sessionID;
+        private String sessionId;
 
-        public User(long id, String name, String sessionID) {
+        public User(long id, String name, String sessionId) {
             this.id = id;
             this.name = name;
-            this.sessionID = sessionID;
+            this.sessionId = sessionId;
         }
 
         public long getId() {
@@ -27,12 +27,12 @@ public class User {
             this.name = name;
         }
 
-        public String getSessionID() {
-            return sessionID;
+        public String getSessionId() {
+            return sessionId;
         }
 
-        public void setSessionID(String sessionID) {
-            this.sessionID = sessionID;
+        public void setSessionId(String sessionId) {
+            this.sessionId = sessionId;
         }
     }
 
