@@ -23,7 +23,7 @@ public class UserRepository {
         return names;
     }
 
-    public long [] getUserId(User[] users) {
+    public long [] getUserIds(User[] users) {
         long [] ids = new long[users.length];
         for (int i = 0; i < users.length; i++) {
             ids[i] = users[i].getId();
