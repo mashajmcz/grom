@@ -52,11 +52,11 @@ public class UserRepository {
                 }
 
             }
-            return "There's no user with such id number";
+            return null;
         }
     }
 
-   /* public static void main(String[] args) {
+ /*  public static void main(String[] args) {
 
         User vasia = new User(1, "Vasya", "FirstSession");
         User vova = new User(2, "Vladimir", "First Session");
@@ -73,7 +73,7 @@ public class UserRepository {
 
         System.out.println(Arrays.toString(userRepository.getUserNames()));
 
-    }
-*/
+    }*/
+
 
 }
