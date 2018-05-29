@@ -93,7 +93,7 @@ public class UserRepository {
         return null;
     }
 
-    public User getUserById(long id) {
+    private User findById(long id) {
         User userWithId;
         for (User elem : users) {
             if (elem != null) {
@@ -118,6 +118,22 @@ public class UserRepository {
         return null;
     }
 
+    public User save (User user) {
+
+        if(user == null)
+            return null;
+        if(findById(user.getId()) != null)
+            return null;
+        for (int i = 0; i < users.length; i++) {
+            if (users[i] ==null) {
+                users[i] = user;
+                return user;
+            }
+        }
+
+
+        return null;
+    }
 
    /* public static void main(String[] args) {
 
