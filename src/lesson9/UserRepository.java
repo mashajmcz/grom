@@ -93,7 +93,7 @@ public class UserRepository {
         return null;
     }
 
-    private User findById(long id) {
+    public User findById(long id) {
         User userWithId;
         for (User elem : users) {
             if (elem != null) {
