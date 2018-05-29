@@ -135,6 +135,34 @@ public class UserRepository {
         return null;
     }
 
+
+    public User update(User user) {
+
+        if (user == null)
+            return null;
+
+        for (int i = 0; i < users.length; i++) {
+            if (users[i] == findById(user.getId())) {
+                users[i] = user;
+                return users[i];
+            }
+                return null;
+
+        }
+
+        return null;
+    }
+
+
+    public void delete(long id) {
+        for (int i = 0; i < users.length; i++) {
+            if (users[i] == findById(id)) users[i] = null;
+        }
+    }
+
+
+
+
    /* public static void main(String[] args) {
 
         User vasia = new User(1, "Vasya", "FirstSession");
