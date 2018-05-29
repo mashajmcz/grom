@@ -93,7 +93,7 @@ public class UserRepository {
         return null;
     }
 
-    public User getUserByID(long id) {
+    public User getUserById(long id) {
         User userWithId;
         for (User elem : users) {
             if (elem != null) {
@@ -106,7 +106,7 @@ public class UserRepository {
         return null;
     }
 
-    public User getUserBySessionID(String sessionId) {
+    public User getUserBySessionId(String sessionId) {
         User userWithId;
         for (User elem : users) {
             if (elem != null) {
