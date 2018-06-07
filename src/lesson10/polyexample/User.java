@@ -1,6 +1,4 @@
-package lesson10;
-
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+package lesson10.polyexample;
 
 public class User extends Human {
 
