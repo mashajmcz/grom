@@ -13,7 +13,7 @@ public class ElectronicsOrder extends Order{
 
     @Override
     public void validateOrder() {
-        if (checkMinimalPrice(getBasePrice()) && checkCity(getShipFromCity()) &&
+        if ((getBasePrice() >=100) && checkCity(getShipFromCity()) &&
         checkCity(getShipToCity()) && checkGender(getCustomerOwned().getGender())) {
        // System.out.println("Your order " + getItemName() + " is validated");
         setDateConfirmed(new Date());
@@ -35,11 +35,6 @@ public class ElectronicsOrder extends Order{
         if (gender.equals("female"))
             return true;
        return false;
-    }
-
-    private boolean checkMinimalPrice(double priceOfOrder){
-        if ((priceOfOrder) >= 100) return true;
-        return false;
     }
 
     @Override
