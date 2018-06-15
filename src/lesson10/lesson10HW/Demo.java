@@ -5,7 +5,7 @@ import java.util.Date;
 public class Demo {
     public static void main(String[] args) {
         Order order1 = new ElectronicsOrder("snes mini", new Date(), "Киев",
-                "Львов",2450, new Customer("Lin", "Львов", "female"),
+                "Львов",2450, new Customer("Lin", "Львов", "Женский"),
                 36);
 
         Order order2 = new ElectronicsOrder("PS4", new Date(), "Киев",

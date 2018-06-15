@@ -15,7 +15,7 @@ public class ElectronicsOrder extends Order{
     public void validateOrder() {
         if ((getBasePrice() >=100) && checkCity(getShipFromCity()) &&
         checkCity(getShipToCity()) && checkGender(getCustomerOwned().getGender())) {
-       // System.out.println("Your order " + getItemName() + " is validated");
+        System.out.println("Your order " + getItemName() + " is validated");
         setDateConfirmed(new Date());
         }
     }
@@ -32,7 +32,7 @@ public class ElectronicsOrder extends Order{
     }
 
     private boolean checkGender (String gender) {
-        if (gender.equals("female"))
+        if (gender.equals("Женский"))
             return true;
        return false;
     }
