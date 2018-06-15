@@ -14,11 +14,16 @@ public class FurnitureOrder extends Order {
 
     @Override
     public void validateOrder() {
+        if (getCustomerOwned() == null || getCustomerOwned().getName() == null ||
+                getCustomerOwned().getName() == "Тест" ||
+                getCustomerOwned().getGender() == null)
+            return;
+
         if (((getShipFromCity().equals("Киев") || getShipFromCity().equals("Львов"))
                 && (getBasePrice() >= 500)
-                && (getCustomerOwned().getName() != "Тест"))) {
+                && (! getCustomerOwned().getName().equals("Тест")))) {
 
-            System.out.println("Your order is confirmed");
+            //System.out.println("Your order is confirmed");
             setDateConfirmed(new Date());
         }
     }

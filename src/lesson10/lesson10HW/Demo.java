@@ -21,8 +21,8 @@ public class Demo {
                 "Херсон",800, new Customer("Riley", "Львов", "male"),
                 "12");
 
-        order1.validateOrder();
         order1.calculatePrice();
+        order1.validateOrder();
         order1.confirmShipping();
 
         order2.calculatePrice();

@@ -23,11 +23,11 @@ public abstract class Order {
         this.customerOwned = customerOwned;
     }
 
-    public abstract void validateOrder();
-    public abstract void calculatePrice();
+   abstract public void validateOrder();
+   abstract public void calculatePrice();
 
     void confirmShipping(){
-        if (dateShipped == null) dateShipped = new Date();
+        if (getDateShipped() == null) setDateShipped(new Date());
     }
 
     public String getItemName() {
