@@ -23,7 +23,7 @@ public abstract class Order {
         this.customerOwned = customerOwned;
     }
 
-    abstract void validateOrder();
+     abstract void validateOrder();
     abstract void calculatePrice();
 
     void confirmShipping(){
