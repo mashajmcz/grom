@@ -23,10 +23,10 @@ public abstract class Order {
         this.customerOwned = customerOwned;
     }
 
-   abstract public void validateOrder();
-   abstract public void calculatePrice();
+   abstract void validateOrder();
+   abstract void calculatePrice();
 
-    void confirmShipping(){
+    public void confirmShipping(){
         if (getDateShipped() == null) setDateShipped(new Date());
     }
 

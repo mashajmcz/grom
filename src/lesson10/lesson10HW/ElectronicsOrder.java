@@ -15,7 +15,7 @@ public class ElectronicsOrder extends Order{
     public void validateOrder() {
         if (checkMinimalPrice(getBasePrice()) && checkCity(getShipFromCity()) &&
         checkCity(getShipToCity()) && checkGender(getCustomerOwned().getGender())) {
-        System.out.println("Your order " + getItemName() + " is validated");
+       // System.out.println("Your order " + getItemName() + " is validated");
         setDateConfirmed(new Date());
         }
     }
