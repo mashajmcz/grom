@@ -20,15 +20,17 @@ public class ElectronicsOrder extends Order{
         }
     }
 
-    private boolean checkCity (String cityName) {
-        String[] validateCities = {"Киев", "Одесса", "Днепр", "Харьков"};
+    //валидные города совпадают для доставки и отправки, поэтому делаю такой метод для проверки на валидность
+     boolean checkCity (String cityName) {
+        String[] validatedCities = {"Киев", "Одесса", "Днепр", "Харьков"};
 
-        for (String elem : validateCities) {
+        for (String elem : validatedCities) {
             if (cityName.equals(elem))
                 return true;
             //else return false;
         }
         return false;
+
     }
 
     private boolean checkGender (String gender) {
