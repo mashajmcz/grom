@@ -13,7 +13,8 @@ public abstract class Order {
     private double totalPrice;
     private Customer customerOwned;
 
-    public Order(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned) {
+    public Order(String itemName, Date dateCreated, String shipFromCity,
+                 String shipToCity, int basePrice, Customer customerOwned) {
         this.itemName = itemName;
         this.dateCreated = dateCreated;
         this.shipFromCity = shipFromCity;
@@ -26,6 +27,7 @@ public abstract class Order {
     abstract void calculatePrice();
 
     void confirmShipping(){
+        if (dateShipped == null) dateShipped = new Date();
     }
 
     public String getItemName() {
