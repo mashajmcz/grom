@@ -23,7 +23,7 @@ public class FurnitureOrder extends Order {
                 && (getBasePrice() >= 500)
                 && (! getCustomerOwned().getName().equals("Тест")))) {
 
-            System.out.println("Your order " + getItemName() + " is confirmed");
+          //  System.out.println("Your order " + getItemName() + " is confirmed");
             setDateConfirmed(new Date());
         }
     }
