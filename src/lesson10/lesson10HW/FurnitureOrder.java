@@ -3,7 +3,7 @@ package lesson10.lesson10HW;
 import java.util.Date;
 
 public class FurnitureOrder extends Order {
-    String furnitureCode;
+    private String furnitureCode;
 
     public FurnitureOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity,
                           int basePrice, Customer customerOwned, String furnitureCode) {
@@ -14,9 +14,9 @@ public class FurnitureOrder extends Order {
 
     @Override
     void validateOrder() {
-        if ((getShipFromCity().equals("Киев") || getShipFromCity().equals("Львов"))
+        if (((getShipFromCity().equals("Киев") || getShipFromCity().equals("Львов"))
                 && (getBasePrice() >= 500)
-                && (getCustomerOwned().getName() != "Тест")) {
+                && (getCustomerOwned().getName() != "Тест"))) {
 
             System.out.println("Your order is confirmed");
             setDateConfirmed(new Date());

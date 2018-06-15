@@ -12,8 +12,8 @@ public class ElectronicsOrder extends Order{
     }
 
     @Override
-    void validateOrder() {
-        if (checkMinimalPrice(getTotalPrice()) && checkCity(getShipFromCity()) &&
+    public void validateOrder() {
+        if (checkMinimalPrice(getBasePrice()) && checkCity(getShipFromCity()) &&
         checkCity(getShipToCity()) && checkGender(getCustomerOwned().getGender())) {
         System.out.println("Your order " + getItemName() + " is validated");
         setDateConfirmed(new Date());
@@ -43,7 +43,7 @@ public class ElectronicsOrder extends Order{
     }
 
     @Override
-    void calculatePrice() {
+    public void calculatePrice() {
         String city = getShipToCity();
         if (checkCity(city)) {
             int basePrice = getBasePrice();
