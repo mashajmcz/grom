@@ -15,6 +15,5 @@ public class OracleDbProvider implements DbProvider {
     @Override
     public void encryptData() {
         //some logic for Oracle
-
     }
 }
