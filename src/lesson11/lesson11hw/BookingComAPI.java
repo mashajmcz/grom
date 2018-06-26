@@ -7,6 +7,19 @@ public class BookingComAPI implements API {
         this.rooms = rooms;
     }
 
+    private boolean condition (int myPrice, int roomPrice, int neededPersons,
+                               int roomPersons, String neededCity, String roomCity, String neededHotel, String roomHotel {
+
+        for (Room room : rooms) {
+            if ((((roomPrice > (myPrice - 100)) &&
+                    (roomPrice <= (myPrice + 100)) &&
+                    (roomPersons == neededPersons) && (roomCity == neededCity)
+                    && (neededHotel == roomHotel))));
+
+        return true;
+
+    }
+
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         int counter = 0;
