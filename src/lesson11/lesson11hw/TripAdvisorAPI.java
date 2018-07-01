@@ -5,6 +5,7 @@ public class TripAdvisorAPI implements API{
     Room[] rooms;
 
     public TripAdvisorAPI(Room[] rooms) {
+        this.rooms = rooms;
     }
 
     public Room[] getRooms() {
