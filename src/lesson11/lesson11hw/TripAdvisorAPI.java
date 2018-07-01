@@ -32,7 +32,7 @@ public class TripAdvisorAPI implements API{
             }
 
 
-        Room[] resultPersons = new Room[counter];
+        Room[] availableRoomsTrip = new Room[counter];
 
         int k = 0;
         for (Room room : rooms) {
@@ -40,13 +40,13 @@ public class TripAdvisorAPI implements API{
                 if ((room.getPersons() <= max && room.getPersons() >= min)
                         && (room.getPrice() == price && room.getCityName() == city && room.getHotelName() == hotel))
                 {
-                        resultPersons[k] = room;
+                    availableRoomsTrip[k] = room;
                         k++;
                     }
                 }
             }
 
-        return resultPersons;
+        return availableRoomsTrip;
     }
 
 
