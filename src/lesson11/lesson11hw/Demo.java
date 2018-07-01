@@ -22,9 +22,9 @@ public class Demo {
     GoogleAPI googleAPI = new GoogleAPI(rooms);
 
 
-        System.out.println(Arrays.deepToString(bookingComAPI.findRooms(300, 1, "Liverpool", "Stars")));
-        System.out.println(Arrays.deepToString(tripAdvisorAPI.findRooms(400, 2, "London", "Stars")));
-        System.out.println(Arrays.deepToString(googleAPI.findRooms(500, 4, "Kyiv", "Hayatt")));
+        System.out.println(Arrays.toString(bookingComAPI.findRooms(300, 1, "Liverpool", "Stars")));
+       // System.out.println(Arrays.toString(tripAdvisorAPI.findRooms(400, 2, "London", "Stars")));
+        System.out.println(Arrays.toString(googleAPI.findRooms(500, 4, "Kyiv", "Hayatt")));
         System.out.println();
 
 
