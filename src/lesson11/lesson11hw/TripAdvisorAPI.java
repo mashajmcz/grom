@@ -15,43 +15,40 @@ public class TripAdvisorAPI implements API{
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        int index = 0;
-        int i = 0;
+        int max = persons + 1;
 
+        int min;
+
+        if ((persons - 1) >= 1)  min = persons - 1;
+        else min = 1;
+
+        int counter = 0;
         for (Room room : rooms) {
-            if (persons <= 0)
-                return null;
-            if (room == null || room.getPersons() <= 0) {
-                continue;
+            if (room != null) {
+                if ((room.getPersons() <= max && room.getPersons() >= min)&&
+                        (room.getPrice() == price && room.getCityName() == city && room.getHotelName() == hotel))
+                        counter++;
+                }
             }
-            int max = persons + 1;
-            int min = persons - 1;
-            if (room.getPrice() == price && room.getCityName().equals(city)
-                    && room.getHotelName().equals(hotel)) {
-                if (room.getPersons() >= min && room.getPersons() >= 1 && room.getPersons() <= max)
-                    index++;
-            }
-        }
-        Room[] properRooms = new Room[index];
+
+
+        Room[] resultPersons = new Room[counter];
+
+        int k = 0;
         for (Room room : rooms) {
-
-
-            if (persons <= 0)
-                return null;
-            if (room == null || room.getPersons() <= 0) {
-                continue;
+            if (room != null) {
+                if ((room.getPersons() <= max && room.getPersons() >= min)
+                        && (room.getPrice() == price && room.getCityName() == city && room.getHotelName() == hotel))
+                {
+                        resultPersons[k] = room;
+                        k++;
+                    }
+                }
             }
-            int highBorder = persons + 1;
-            int lowBorder = persons - 1;
-            if (room.getPrice() == price && room.getCityName().equals(city)
-                    && room.getHotelName().equals(hotel)) {
-                if (room.getPersons() >= lowBorder && room.getPersons() >= 1 && room.getPersons() <= highBorder)
-                    i++;
-                    properRooms[i] = room;
-            }
-        }
-        return properRooms;
+
+        return resultPersons;
     }
+
 
 
 
