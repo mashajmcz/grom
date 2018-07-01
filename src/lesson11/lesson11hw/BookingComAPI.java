@@ -1,11 +1,12 @@
 package lesson11.lesson11hw;
 
 public class BookingComAPI implements API {
-    Room[] rooms;
+    private Room[] rooms;
 
     public BookingComAPI(Room[] rooms) {
         this.rooms = rooms;
     }
+
 
     private boolean condition (int myPrice, int roomPrice, int neededPersons,
                                int roomPersons, String neededCity, String roomCity, String neededHotel,
@@ -27,55 +28,42 @@ public class BookingComAPI implements API {
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        int counter = 0;
 
+        int highestPrice = price + 100;
+        int lowestPrice;
+
+        if ((price - 100) >= 0)
+            lowestPrice = price - 100;
+        else lowestPrice = 0;
+
+
+        int counter = 0;
         for (Room room : rooms) {
             if (room != null) {
-
-                if (condition(price, room.getPrice(), persons, room.getPersons(),
-                        city, room.getCityName(), hotel, room.getHotelName()))
-                    counter++;
+                if (room.getPrice() <= highestPrice && room.getPrice() >= lowestPrice) {
+                    if (room.getPersons() == persons && room.getCityName() == city && room.getHotelName() == hotel)
+                        counter++;
+                }
             }
         }
 
+        Room[] resultPrice = new Room[counter];
 
-       /* for (Room room : rooms) {
-            if ((((room.getPrice() > (price - 100)) &&
-                    (room.getPrice() <= (price + 100)) &&
-                    (room.getPersons() == persons) && (room.getCityName() == city)
-                    && (room.getHotelName() == hotel))))
-                counter++;
-        }
-        */
-
-        Room[] availableRooms = new Room[counter];
         int k = 0;
-        for (int i = 0; i < counter; i++) {
-            if (rooms[i] != null) {
-
-            if (condition(price, rooms[i].getPrice(), persons, rooms[i].getPersons(),
-                    city, rooms[i].getCityName(), hotel, rooms[i].getHotelName())) {
-                System.out.println("room in " + hotel + " is available from" + rooms[i].getDateAvailableFrom());
-                availableRooms[k] = rooms[i];
-                k++;
+        for (Room room : rooms) {
+            if (room != null) {
+                if ((room.getPrice() <= highestPrice && room.getPrice() >= lowestPrice)
+                    && (room.getPersons() == persons && room.getCityName() ==
+                            city && room.getHotelName() == hotel))
+                {
+                        resultPrice[k] = room;
+                        k++;
+                    }
+                }
             }
 
-        }
-        }
-
-            /*
-
-            if ((((rooms[i].getPrice() > (price - 100)) &&
-                    (rooms[i].getPrice() <= (price + 100)) &&
-                    (rooms[i].getPersons() == persons) && (rooms[i].getCityName() == city)
-                    && (rooms[i].getHotelName() == hotel)))) {
-                System.out.println("room in " + hotel + " is available from" + rooms[i].getDateAvailableFrom());
-                availableRooms[k] = rooms[i];
-                k++;
-            }
-        } */
-            return availableRooms;
-        }
+        return resultPrice;
+    }
 
 
         @Override
