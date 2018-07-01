@@ -12,6 +12,8 @@ public class BookingComAPI implements API {
                                String roomHotel) {
 
         for (Room room : rooms) {
+            if (room != null) {
+
             if ((((roomPrice > (myPrice - 100)) &&
                     (roomPrice <= (myPrice + 100)) &&
                     (roomPersons == neededPersons) && (roomCity == neededCity)
@@ -19,7 +21,7 @@ public class BookingComAPI implements API {
 
             return true;
 
-        }
+        }}
         return false;
     }
 
@@ -49,6 +51,7 @@ public class BookingComAPI implements API {
         Room[] availableRooms = new Room[counter];
         int k = 0;
         for (int i = 0; i < counter; i++) {
+            if (rooms[i] != null) {
 
             if (condition(price, rooms[i].getPrice(), persons, rooms[i].getPersons(),
                     city, rooms[i].getCityName(), hotel, rooms[i].getHotelName())) {
@@ -57,6 +60,7 @@ public class BookingComAPI implements API {
                 k++;
             }
 
+        }
         }
 
             /*
