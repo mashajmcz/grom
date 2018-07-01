@@ -13,12 +13,14 @@ public class GoogleAPI implements API {
                                String roomHotel) {
 
         for (Room room : rooms) {
-            if ((((roomPrice == myPrice) &&
-                    (roomPersons == neededPersons)
-                    && (roomCity == neededCity)
-                    && (neededHotel == roomHotel)))) ;
+            if (room != null) {
+                if ((((roomPrice == myPrice) &&
+                        (roomPersons == neededPersons)
+                        && (roomCity == neededCity)
+                        && (neededHotel == roomHotel)))) ;
 
-            return true;
+                return true;
+            }
 
         }
         return false;

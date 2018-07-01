@@ -34,6 +34,8 @@ public class TripAdvisorAPI implements API{
         }
         Room[] properRooms = new Room[index];
         for (Room room : rooms) {
+
+
             if (persons <= 0)
                 return null;
             if (room == null || room.getPersons() <= 0) {
