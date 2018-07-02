@@ -1,7 +1,5 @@
 package lesson11.biginterfaceexample;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 public class FileReader implements Readable {
 
     @Override
